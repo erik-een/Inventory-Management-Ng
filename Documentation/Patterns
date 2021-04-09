@@ -1,0 +1,6 @@
+Component structure:
+
+buttons and small interactibles as separate components
+
+Interactible features as mixed whole components (i.e nav contains components of buttons)
+
