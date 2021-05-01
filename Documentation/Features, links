@@ -10,6 +10,9 @@ Features for users:
 3. CRUD inventory. Create items, look up items/inventory, update items, remove items.
 
 Users can
+
+rate companies, but any rating below 3 is between the company and client, hidden, until both parties have the opportunity to resolve the issue first, with a timeout of 2 weeks to avoid rating abuse on both ends and have a report feature so for real people to see if someone is just abusing the rating system to downrate companies
+
 * Add items to their companies' inventory.
 
 * Check them out of the inventory for use/renting temporarily and have history of where the items went.
