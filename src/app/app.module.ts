@@ -12,10 +12,7 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    InventoriesComponent,
-    InventoryComponent,
-    InventoryListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
