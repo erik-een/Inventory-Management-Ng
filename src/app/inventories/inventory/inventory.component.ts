@@ -10,10 +10,12 @@ import { InventoryListService } from "../inventory-list-service/inventory-list.s
 })
 export class InventoryComponent implements OnInit {
   public mockInventoryList: Inventory[] = [];
+
+
   constructor(private InventoryListService: InventoryListService) { }
 
   ngOnInit(): void {
-    this.loadInventory()
+    this.loadInventory();
   }
 
   private loadInventory(): void {

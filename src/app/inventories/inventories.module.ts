@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InventoryComponent } from './inventory/inventory.component';
 import { InventoriesComponent } from './inventories.component';
-import { InventoryListItemComponent } from './inventory-list-item/inventory-list-item.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
-  declarations: [InventoriesComponent, InventoryComponent, InventoryListItemComponent],
+  declarations: [InventoriesComponent, InventoryComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
-  exports: [InventoriesComponent, InventoryComponent, InventoryListItemComponent]
+  exports: [InventoriesComponent, InventoryComponent]
 })
 export class InventoriesModule { }
