@@ -16,6 +16,7 @@ https://dev-academy.com/angular-architecture-best-practices/
 4. Add extra features.
 
 1.1 Make it display mock data/ overview of current inventory
+1.1/2 make a navbar
 1.2 Make a different page for CRUDing inventory(s)
 1.3 Make a page for moving inventory
 1.4 Make a page for doing inventory (update current inventory)

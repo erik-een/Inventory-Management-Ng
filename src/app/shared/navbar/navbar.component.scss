@@ -1,0 +1,8 @@
+@import "../../../styles.scss";
+
+nav {
+  background-color: #2a2c36;
+  & > li {
+    color: $white-color;
+  }
+}
