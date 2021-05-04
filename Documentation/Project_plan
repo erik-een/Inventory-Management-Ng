@@ -1,0 +1,20 @@
+Component structure:
+
+Organism > Molecule > Atom
+Inventory movement: airline terms (arriving, departing, parked)
+
+Separate functionality into 3. Input/Output from UI, services to transport necessary parts to the core.
+
+
+https://dev-academy.com/angular-architecture-best-practices/
+
+
+1. Make it fast, make it work.
+2. Clean up and improve.
+3. Make it BEAUTIFUL!
+4. Add extra features.
+
+1.1 Make it display mock data and CRUD it.
+1.2 Make it create new inventories with custom data stored in cache.
+1.3 Make it store/read data from localstorage
+1.4 Make it upload/data to and from server.

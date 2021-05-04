@@ -4,10 +4,8 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InventoriesComponent } from './inventories/inventories.component';
-import { InventoryComponent } from './inventories/inventory/inventory.component';
-import { InventoryListComponent } from './inventories/inventory-list/inventory-list.component';
 import { SharedModule } from './shared/shared.module';
+import { InventoriesModule } from './inventories/inventories.module';
 
 
 @NgModule({
@@ -18,7 +16,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    InventoriesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
