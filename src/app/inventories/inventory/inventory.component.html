@@ -9,11 +9,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor='let item of mockInventoryList'>
-                <td>{{ item.nameOfItem }}</td>
-                <td>{{ item.parked }}</td>
-                <td>{{ item.departing }}</td>
-                <td>{{ item.arriving }}</td>
+            <tr>
+                <app-inventory-list-item>
+                </app-inventory-list-item>
+
             </tr>
         </tbody>
     </table>
