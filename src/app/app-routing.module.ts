@@ -4,9 +4,9 @@ import { InventoriesComponent } from './inventories/inventories.component';
 import { InventoryEditComponent } from './inventories/inventory-edit/inventory-edit.component';
 
 const routes: Routes = [
-  { path: 'inventory', component: InventoriesComponent },
   { path: 'inventory-edit', component: InventoryEditComponent },
-  { path: '**', redirectTo: 'inventories' },
+  { path: 'inventory', component: InventoriesComponent },
+  { path: '**', redirectTo: 'inventory' },
 ];
 
 @NgModule({

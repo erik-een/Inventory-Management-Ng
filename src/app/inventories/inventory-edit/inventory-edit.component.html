@@ -1,3 +1,19 @@
+<form [formGroup]="itemForm" mat-form-field appearance="fill">
+  <div mat-label>Input</div>
+  <input matInput />
+</form>
+<div mat-form-field appearance="fill">
+  <div mat-label>Select</div>
+  <div mat-select>
+    <div mat-option value="one">First option</div>
+    <div mat-option value="two">Second option</div>
+  </div>
+</div>
+<div mat-form-field appearance="fill">
+  <div mat-label>Textarea</div>
+  <textarea matInput></textarea>
+</div>
+
 <div>
   <table>
     <thead>

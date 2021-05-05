@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Inventory } from 'src/app/models/iInventorylist';
 import { InventoryListService } from '../inventory-list-service/inventory-list.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-inventory-edit',
@@ -10,7 +12,16 @@ import { InventoryListService } from '../inventory-list-service/inventory-list.s
 export class InventoryEditComponent implements OnInit {
   public mockInventoryList: Inventory[] = [];
 
-  constructor(private InventoryListService: InventoryListService) {}
+  constructor(
+    private InventoryListService: InventoryListService,
+    private formBuilder: FormBuilder
+  ) {}
+  itemForm = this.formBuilder.group({
+    itemName: [''],
+    inStock: [''],
+    departing: [''],
+    arriving: [''],
+  });
 
   ngOnInit(): void {
     this.loadInventory();
