@@ -6,10 +6,12 @@ $gray-color: #ABB4BD;
 $sale-hot-color: #FF3E3E;
 $success-color: #55D85A;
 $white-color: #F6F6F6;
-@import '~bootstrap/dist/css/bootstrap.min.css';
 
 
 *, body {
     margin: 0;
     padding: 0;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

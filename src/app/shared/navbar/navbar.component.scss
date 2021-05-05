@@ -1,8 +1,11 @@
 @import "../../../styles.scss";
 
-nav {
-  background-color: #2a2c36;
-  & > li {
-    color: $white-color;
-  }
+li {
+  display: inline;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
