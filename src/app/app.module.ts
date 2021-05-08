@@ -8,8 +8,9 @@ import { SharedModule } from './shared/shared.module';
 import { InventoriesModule } from './inventories/inventories.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from './app-material/app-material.module';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,8 @@ import { AppMaterialModule } from './app-material/app-material.module';
     LayoutModule,
     FormsModule,
     AppMaterialModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
   ],
   providers: [],
   exports: [],

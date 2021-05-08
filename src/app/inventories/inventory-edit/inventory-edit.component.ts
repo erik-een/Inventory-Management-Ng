@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Inventory } from 'src/app/models/iInventorylist';
 import { InventoryListService } from '../inventory-list-service/inventory-list.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-inventory-edit',
@@ -12,23 +10,37 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class InventoryEditComponent implements OnInit {
   public mockInventoryList: Inventory[] = [];
-  itemCRUDForm: FormGroup = this.creatItemCRUDForm();
+  itemCRUDForm: FormGroup = this._InventoryListService.itemCRUDForm;
 
   constructor(
-    private _InventoryListService: InventoryListService,
-    private _formBuilder: FormBuilder
+    public _InventoryListService: InventoryListService // private _formBuilder: FormBuilder
   ) {}
-  private creatItemCRUDForm(): FormGroup {
-    return this._formBuilder.group({
-      itemName: ['', Validators.required],
-      inStock: ['', Validators.required],
-      departing: ['', Validators.required],
-      arriving: ['', Validators.required],
-    });
-  }
+  // private createItemCRUDForm(): FormGroup {
+  //   return this._formBuilder.group({
+  // itemName: ['', Validators.required],
+  // inStock: ['', Validators.required],
+  // departing: ['', Validators.required],
+  // arriving: ['', Validators.required],
+  //   });
+  // }
 
   ngOnInit(): void {
     this._loadInventory();
+  }
+
+  onClear(): void {
+    this.itemCRUDForm.reset();
+  }
+
+  onAddItemToInventory(): void {
+    console.log(this.itemCRUDForm.value);
+
+    this._InventoryListService
+      .addInventoryItem(this.itemCRUDForm.value)
+      .subscribe(() => {
+        this._loadInventory();
+        this.itemCRUDForm.reset();
+      });
   }
 
   private _loadInventory(): void {

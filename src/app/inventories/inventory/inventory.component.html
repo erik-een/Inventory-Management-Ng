@@ -2,6 +2,8 @@
   <table>
     <thead>
       <tr>
+        <th>ID</th>
+        <th>Item Barcode</th>
         <th>Item Name</th>
         <th>Items in Inventory</th>
         <th>Items leaving from Inventory</th>
@@ -10,6 +12,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of mockInventoryList">
+        <td>{{ item.id }}</td>
+        <td>{{ item.barCode }}</td>
         <td>{{ item.nameOfItem }}</td>
         <td>{{ item.parked }}</td>
         <td>{{ item.departing }}</td>

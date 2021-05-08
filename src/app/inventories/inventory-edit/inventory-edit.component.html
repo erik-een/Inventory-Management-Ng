@@ -14,35 +14,101 @@
   <textarea matInput></textarea>
 </div> -->
 <form [formGroup]="itemCRUDForm">
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder" />
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controller-container">
+        <input type="hidden" formControlName="$key" />
+        <mat-form-field>
+          <input
+            formControlName="barCode"
+            matInput
+            placeholder="Item Barcode *"
+          />
+          <mat-error
+            >To add item to stock, must add at least 5 digit barcode</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="nameOfItem"
+            matInput
+            placeholder="Item Name *"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="parked"
+            matInput
+            placeholder="Items into Stock *"
+          />
+          <mat-error
+            *ngIf="
+              _InventoryListService.itemCRUDForm.controls['parked'].errors
+                ?.required
+            "
+            >To add item to stock, must add at least 1 quantity</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controller-container">
+        <mat-form-field>
+          <mat-label>Date added: mm/dd/yyyy *</mat-label>
+          <input
+            formControlName="addedOnDate"
+            matInput
+            [matDatepicker]="picker"
+            placeholder="mm/dd/yyyy"
+          />
+          <mat-error>Date must have at least 8 digits.</mat-error>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="form-button_row">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="itemCRUDForm.invalid"
+            (click)="onAddItemToInventory()"
+          >
+            Add item
+          </button>
+          <button mat-raised-button color="warn" (click)="onClear()">
+            Clear
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </form>
 
 <div>
   <table>
     <thead>
       <tr>
+        <th>ID</th>
+        <th>Item Barcode</th>
         <th>Item Name</th>
         <th>Items in Inventory</th>
         <th>Items leaving from Inventory</th>
         <th>Items arriving into Inventory</th>
+        <th>Date added</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of mockInventoryList">
-        <td><input type="text" />{{ item.nameOfItem }}</td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.barCode }}</td>
+        <td>{{ item.nameOfItem }}</td>
         <td>{{ item.parked }}</td>
-        <td>{{ item.departing }}</td>
-        <td>{{ item.arriving }}</td>
-        <div>
-          <app-button buttonText="-" class="remove"></app-button>
-          <app-button buttonText="Update" class="Update"></app-button>
-        </div>
+        <td>{{ item.departing || 2 }}</td>
+        <td>{{ item.arriving || 2 }}</td>
+        <td>{{ item.addedOnDate | date }}</td>
       </tr>
     </tbody>
   </table>

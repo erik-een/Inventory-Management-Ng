@@ -9,7 +9,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [],
@@ -24,6 +27,10 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatDatepickerModule,
   ],
   exports: [
     MatToolbarModule,
@@ -35,6 +42,10 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatDatepickerModule,
   ],
 })
 export class AppMaterialModule {}

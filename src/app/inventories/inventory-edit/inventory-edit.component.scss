@@ -17,3 +17,16 @@
 * {
   background-color: grey;
 }
+
+.controller-container {
+  width: 100%;
+  padding: 5%;
+}
+
+.controller-container > * {
+  width: 100%;
+}
+
+.add-bottom-padding {
+  padding-bottom: 10px;
+}
