@@ -1,4 +1,4 @@
-<form [formGroup]="itemForm" mat-form-field appearance="fill">
+<!-- <form [formGroup]="itemCRUDForm" mat-form-field appearance="fill">
   <div mat-label>Input</div>
   <input matInput />
 </form>
@@ -12,7 +12,37 @@
 <div mat-form-field appearance="fill">
   <div mat-label>Textarea</div>
   <textarea matInput></textarea>
-</div>
+</div> -->
+<form action="">
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Legacy form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Standard form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Fill form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+</form>
 
 <div>
   <table>
