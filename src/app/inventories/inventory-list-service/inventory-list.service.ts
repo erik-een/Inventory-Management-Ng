@@ -3,12 +3,29 @@ import { Observable, of } from 'rxjs';
 import { mockInventory } from 'src/app/mocks/mockinventory';
 import { Inventory } from 'src/app/models/iInventorylist';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire'
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 @Injectable({
   providedIn: 'root',
 })
 export class InventoryListService {
-  constructor() {}
+  private dbPath: any =
+    'C:/Users/Erik/OneDrive/Desktop/Inventorymanagement app/inventory-management-ng/src/app/mocks/mockinventory.ts';
+  inventoryRef: AngularFireList<Inventory>;
+
+  createInventoryItem(item: Inventory): void {
+    this.inventoryRef.push(item);
+  }
+
+  getInventoryList(): AngularFireList<Inventory> {
+    return this.inventoryRef;
+  }
+  updateInventoryList(key: string, value: any): Promise<void> {
+    return this.inventoryRef.update(key, value);
+  }
+
+  constructor(private db: AngularFireDatabase) {
+    this.inventoryRef = db.list(this.dbPath);
+  }
 
   addInventoryItem(inventoryItem: Inventory): Observable<number> {
     const listOfInventory: Array<Inventory> = mockInventory;
