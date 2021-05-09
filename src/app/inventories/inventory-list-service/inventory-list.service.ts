@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { mockInventory } from 'src/app/mocks/mockinventory';
 import { Inventory } from 'src/app/models/iInventorylist';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire'
 @Injectable({
   providedIn: 'root',
 })
