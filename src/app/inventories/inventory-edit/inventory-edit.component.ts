@@ -32,7 +32,7 @@ export class InventoryEditComponent implements OnInit {
     this.itemCRUDForm.reset();
   }
 
-  onAddItemToInventory(): void {
+  onSubmit(): void {
     console.log(this.itemCRUDForm.value);
 
     this._InventoryListService

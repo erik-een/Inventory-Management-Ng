@@ -8,19 +8,21 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
   providedIn: 'root',
 })
 export class InventoryListService {
-  private dbPath: any =
-    'C:/Users/Erik/OneDrive/Desktop/Inventorymanagement app/inventory-management-ng/src/app/mocks/mockinventory.ts';
-  inventoryRef: AngularFireList<Inventory>;
+  private dbPath: any = '/app/mocks/mockinventory';
+  inventoryRef: AngularFireList<Inventory[]>;
 
-  createInventoryItem(item: Inventory): void {
+  createInventoryItem(item: Inventory[]): void {
     this.inventoryRef.push(item);
   }
 
-  getInventoryList(): AngularFireList<Inventory> {
+  getInventoryList(): AngularFireList<Inventory[]> {
     return this.inventoryRef;
   }
-  updateInventoryList(key: string, value: any): Promise<void> {
+  updateInventoryItem(key: string, value: any): Promise<void> {
     return this.inventoryRef.update(key, value);
+  }
+  deleteInventoryItem(key: string) {
+    return this.inventoryRef.remove(key);
   }
 
   constructor(private db: AngularFireDatabase) {

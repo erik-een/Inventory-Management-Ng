@@ -13,7 +13,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { environment } from '../environments/environment';
+import { Firebase } from '../environments/firebase';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +29,7 @@ import { environment } from '../environments/environment';
     AppMaterialModule,
     ReactiveFormsModule,
     MatNativeDateModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(Firebase.firebaseConfig),
     AngularFireDatabaseModule,
   ],
   providers: [],

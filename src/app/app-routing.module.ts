@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'inventory-edit', component: InventoryEditComponent },
   { path: 'inventory-display', component: InventoryDisplayComponent },
   { path: 'inventories', component: InventoriesComponent },
-  { path: '**', redirectTo: 'inventory' },
+  { path: '**', redirectTo: 'inventory-display' },
 ];
 
 @NgModule({

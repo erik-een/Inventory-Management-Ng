@@ -13,72 +13,75 @@
   <div mat-label>Textarea</div>
   <textarea matInput></textarea>
 </div> -->
-<form [formGroup]="itemCRUDForm">
-  <mat-grid-list cols="2" rowHeight="300px">
-    <mat-grid-tile>
-      <div class="controller-container">
-        <input type="hidden" formControlName="$key" />
-        <mat-form-field>
-          <input
-            formControlName="barCode"
-            matInput
-            placeholder="Item Barcode *"
-          />
-          <mat-error
-            >To add item to stock, must add at least 5 digit barcode</mat-error
-          >
-        </mat-form-field>
-        <mat-form-field>
-          <input
-            formControlName="nameOfItem"
-            matInput
-            placeholder="Item Name *"
-          />
-        </mat-form-field>
-        <mat-form-field>
-          <input
-            formControlName="parked"
-            matInput
-            placeholder="Items into Stock *"
-          />
-          <mat-error
-            >To add item to stock, must add at least 1 quantity</mat-error
-          >
-        </mat-form-field>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <div class="controller-container">
-        <mat-form-field>
-          <mat-label>Date added: mm/dd/yyyy *</mat-label>
-          <input
-            formControlName="addedOnDate"
-            matInput
-            [matDatepicker]="picker"
-            placeholder="mm/dd/yyyy"
-          />
-          <mat-error>Date must have at least 8 digits.</mat-error>
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <div class="form-button_row">
-          <button
-            mat-raised-button
-            color="primary"
-            type="submit"
-            [disabled]="itemCRUDForm.invalid"
-            (click)="onAddItemToInventory()"
-          >
-            Add item
-          </button>
-          <button mat-raised-button color="warn" (click)="onClear()">
-            Clear
-          </button>
+<div>
+  <form [formGroup]="itemCRUDForm" (ngSubmit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="300px">
+      <mat-grid-tile>
+        <div class="controller-container">
+          <input type="hidden" formControlName="$key" />
+          <mat-form-field>
+            <input
+              formControlName="barCode"
+              matInput
+              placeholder="Item Barcode *"
+            />
+            <mat-error
+              >To add item to stock, must add at least 5 digit
+              barcode</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="nameOfItem"
+              matInput
+              placeholder="Item Name *"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="parked"
+              matInput
+              placeholder="Items into Stock *"
+            />
+            <mat-error
+              >To add item to stock, must add at least 1 quantity</mat-error
+            >
+          </mat-form-field>
         </div>
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list>
-</form>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="controller-container">
+          <mat-form-field>
+            <mat-label>Date added: mm/dd/yyyy *</mat-label>
+            <input
+              formControlName="addedOnDate"
+              matInput
+              [matDatepicker]="picker"
+              placeholder="mm/dd/yyyy"
+            />
+            <mat-error>Date must have at least 8 digits.</mat-error>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div class="form-button_row">
+            <!-- <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="itemCRUDForm.invalid"
+              (click)="onAddItemToInventory()"
+            >
+              Add item
+            </button> -->
+            <button mat-raised-button color="warn" (click)="onClear()">
+              Clear
+            </button>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+</div>
