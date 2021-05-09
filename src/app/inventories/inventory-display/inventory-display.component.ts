@@ -8,6 +8,14 @@ import { InventoryListService } from '../inventory-list-service/inventory-list.s
   styleUrls: ['./inventory-display.component.scss'],
 })
 export class InventoryDisplayComponent implements OnInit {
+  columnsToDisplay: Array<string> = [
+    'id',
+    'barCode',
+    'nameOfItem',
+    'parked',
+    'arriving',
+    'departing',
+  ];
   public mockInventoryList: Inventory[] = [];
 
   constructor(private InventoryListService: InventoryListService) {}
