@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "inventory-management-erikeen": {
+      "hosting": {
+        "inventory-management-ng": [
+          "inventory-management-erikeen"
+        ]
+      }
+    }
+  }
+}

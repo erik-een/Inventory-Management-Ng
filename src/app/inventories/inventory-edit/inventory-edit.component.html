@@ -42,10 +42,6 @@
             placeholder="Items into Stock *"
           />
           <mat-error
-            *ngIf="
-              _InventoryListService.itemCRUDForm.controls['parked'].errors
-                ?.required
-            "
             >To add item to stock, must add at least 1 quantity</mat-error
           >
         </mat-form-field>
@@ -86,30 +82,3 @@
     </mat-grid-tile>
   </mat-grid-list>
 </form>
-
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Item Barcode</th>
-        <th>Item Name</th>
-        <th>Items in Inventory</th>
-        <th>Items leaving from Inventory</th>
-        <th>Items arriving into Inventory</th>
-        <th>Date added</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of mockInventoryList">
-        <td>{{ item.id }}</td>
-        <td>{{ item.barCode }}</td>
-        <td>{{ item.nameOfItem }}</td>
-        <td>{{ item.parked }}</td>
-        <td>{{ item.departing || 2 }}</td>
-        <td>{{ item.arriving || 2 }}</td>
-        <td>{{ item.addedOnDate | date }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
