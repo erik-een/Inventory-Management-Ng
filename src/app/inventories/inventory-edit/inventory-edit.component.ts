@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Inventory } from 'src/app/models/iInventorylist';
+import { iInventory } from 'src/app/models/iInventorylist';
 import { InventoryListService } from '../inventory-list-service/inventory-list.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ThrowStmt } from '@angular/compiler';
@@ -11,7 +11,7 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./inventory-edit.component.scss'],
 })
 export class InventoryEditComponent implements OnInit {
-  public mockInventoryList: Inventory[] = [];
+  public mockInventoryList: iInventory[] = [];
   itemCRUDForm: FormGroup = this.creatItemCRUDForm();
 
   constructor(
@@ -35,7 +35,8 @@ export class InventoryEditComponent implements OnInit {
     this._InventoryListService
       .getInventory()
       .subscribe(
-        (mockInventory: Inventory[]) => (this.mockInventoryList = mockInventory)
+        (mockInventory: iInventory[]) =>
+          (this.mockInventoryList = mockInventory)
       );
   }
 }

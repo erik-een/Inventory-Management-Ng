@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { mockInventory } from 'src/app/mocks/mockinventory';
-import { Inventory } from 'src/app/models/iInventorylist';
+import { iInventory } from 'src/app/models/iInventorylist';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InventoryListService {
+  constructor() {}
 
-  constructor() { }
-
-  getInventory(): Observable<Inventory[]> {
+  getInventory(): Observable<iInventory[]> {
     return of(mockInventory);
   }
-
 }
