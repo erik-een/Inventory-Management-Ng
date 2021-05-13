@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { iInventory } from 'src/app/models/iInventorylist';
 import { InventoryListService } from '../inventory-list-service/inventory-list.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-inventory-edit',

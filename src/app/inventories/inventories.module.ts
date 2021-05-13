@@ -5,11 +5,7 @@ import { InventoriesComponent } from './inventories.component';
 import { SharedModule } from '../shared/shared.module';
 import { InventoryEditComponent } from './inventory-edit/inventory-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatTableModule } from '@angular/material/table';
-
+import { AppMaterialModule } from '../app-material/app-material.module';
 @NgModule({
   declarations: [
     InventoriesComponent,
@@ -21,10 +17,7 @@ import { MatTableModule } from '@angular/material/table';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
+    AppMaterialModule,
   ],
   exports: [InventoriesComponent, InventoryComponent, InventoryEditComponent],
 })

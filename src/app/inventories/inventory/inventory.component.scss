@@ -1,14 +1,13 @@
 table {
-    &>thead>tr>th {
-        border: 1px solid black;
-    }
-  &>th, td {
-      border: 1px solid black;
-  }
-  &>tbody{
-      text-align: end;
-  }
-  &>tbody>tr>:first-child {
-      text-align: start;
-  }
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
 }
