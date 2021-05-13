@@ -19,7 +19,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
         Out of Inventory
       </th>
-      <td mat-cell *matCellDef="let row" {{row.departing}}></td>
+      <td mat-cell *matCellDef="let row">{{ row.departing }}</td>
     </ng-container>
     <ng-container matColumnDef="arriving">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Into Inventory</th>
@@ -39,24 +39,3 @@
 
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
-
-<!-- <div>
-  <table>
-    <thead>
-      <tr>
-        <th>Item Name</th>
-        <th>Items in Inventory</th>
-        <th>Items leaving from Inventory</th>
-        <th>Items arriving into Inventory</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of mockInventoryList">
-        <td>{{ item.nameOfItem }}</td>
-        <td>{{ item.parked }}</td>
-        <td>{{ item.departing }}</td>
-        <td>{{ item.arriving }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->

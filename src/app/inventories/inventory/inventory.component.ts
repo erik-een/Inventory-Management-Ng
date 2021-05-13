@@ -13,7 +13,12 @@ import { InventoryListService } from '../inventory-list-service/inventory-list.s
 })
 export class InventoryComponent implements AfterViewInit {
   mockInventoryList: iInventory[] = mockInventory;
-  displayedColumns: string[] = ['nameOfItem', 'parked', 'arriving'];
+  displayedColumns: string[] = [
+    'nameOfItem',
+    'parked',
+    'departing',
+    'arriving',
+  ];
 
   dataSource: MatTableDataSource<iInventory>;
   @ViewChild(MatPaginator) paginator: MatPaginator = null!;
