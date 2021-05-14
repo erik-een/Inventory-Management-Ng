@@ -1,21 +1,42 @@
-<nav>
-  <a>INVENTORIC</a>
-  <button>
-    <span></span>
-  </button>
-  <div id="navbarNav">
-    <ul>
-      <li>
-        <a href="#">Home <span>(current)</span></a>
-      </li>
-      <li>
-        <a [routerLink]="['inventory']" routerLinkActive="active"
-          >Inventories</a
-        >
-      </li>
-      <li>
-        <a [routerLink]="['inventory-edit']">Manage Inventory</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+    position="end"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['inventory']">Home</a>
+      <a mat-list-item [routerLink]="['inventory']" routerLinkActive="active"
+        >Overview</a
+      >
+      <a
+        mat-list-item
+        [routerLink]="['inventory-edit']"
+        routerLinkActive="active"
+        >Edit</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>INVENTORIC</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content select="router-outlet"></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-header></app-header>
