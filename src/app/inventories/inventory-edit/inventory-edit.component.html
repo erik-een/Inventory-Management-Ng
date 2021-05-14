@@ -22,28 +22,4 @@
     </mat-form-field>
   </p>
 </form> -->
-
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Item Name</th>
-        <th>Items in Inventory</th>
-        <th>Items leaving from Inventory</th>
-        <th>Items arriving into Inventory</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of mockInventoryList">
-        <td>{{ item.nameOfItem }}</td>
-        <td>{{ item.parked }}</td>
-        <td>{{ item.departing }}</td>
-        <td>{{ item.arriving }}</td>
-        <div>
-          <app-button buttonText="-" class="remove"></app-button>
-          <app-button buttonText="Update" class="Update"></app-button>
-        </div>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<app-inventory></app-inventory>

@@ -1,1 +1,12 @@
 @import "../../../styles.scss";
+
+ng-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+mat-sidenav-content {
+  height: 100vh;
+}
