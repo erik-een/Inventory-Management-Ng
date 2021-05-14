@@ -5,7 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
-
+import { AppMaterialModule } from '../app-material/app-material.module';
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     NavbarComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AppMaterialModule],
   exports: [ButtonComponent, FooterComponent, HeaderComponent, NavbarComponent],
 })
 export class SharedModule {}
