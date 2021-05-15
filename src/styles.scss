@@ -1,15 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-$dark-color: #1E1F28;
-$primary-color: #EF3651;
-$error-color: #FF2424;
-$gray-color: #ABB4BD;
-$sale-hot-color: #FF3E3E;
-$success-color: #55D85A;
-$white-color: #F6F6F6;
-@import '~bootstrap/dist/css/bootstrap.min.css';
+$dark-color: #1e1f28;
+$primary-color: #ef3651;
+$error-color: #ff2424;
+$gray-color: #abb4bd;
+$sale-hot-color: #ff3e3e;
+$success-color: #55d85a;
+$white-color: #f6f6f6;
 
-
-*, body {
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

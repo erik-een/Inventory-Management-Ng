@@ -1,29 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InventoriesComponent } from './inventories/inventories.component';
-import { InventoryComponent } from './inventories/inventory/inventory.component';
-import { InventoryListComponent } from './inventories/inventory-list/inventory-list.component';
 import { SharedModule } from './shared/shared.module';
-
+import { InventoriesModule } from './inventories/inventories.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { FormsModule } from '@angular/forms';
+import { AppMaterialModule } from './app-material/app-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InventoriesComponent,
-    InventoryComponent,
-    InventoryListComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    InventoriesModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    FormsModule,
+    AppMaterialModule,
+    FlexLayoutModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  exports: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

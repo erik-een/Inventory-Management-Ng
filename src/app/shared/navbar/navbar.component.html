@@ -1,0 +1,37 @@
+<div style="height: 100vh">
+  <mat-toolbar color="primary">
+    <span>INVENTORIC</span>
+
+    <span class="example-spacer"></span>
+
+    <div fxShow="true" fxHide.lt-md="true">
+      <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+      <a mat-button [routerLink]="['inventory']">Home</a>
+      <a mat-button [routerLink]="['inventory']">Overview</a>
+      <a mat-button [routerLink]="['inventory-edit']">Edit</a>
+    </div>
+
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav #sidenav fxLayout="column" position="end">
+      <div fxLayout="column">
+        <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+        <a mat-button [routerLink]="['inventory']">Home</a>
+        <a mat-button [routerLink]="['inventory']">Overview</a>
+        <a mat-button [routerLink]="['inventory-edit']">Edit</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill fxLayout="column">
+      <div>
+        <ng-content></ng-content>
+      </div>
+      <app-footer></app-footer
+    ></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
