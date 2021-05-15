@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule } from '@angular/forms';
 import { AppMaterialModule } from './app-material/app-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
     LayoutModule,
     FormsModule,
     AppMaterialModule,
+    FlexLayoutModule,
   ],
   providers: [],
   exports: [],
