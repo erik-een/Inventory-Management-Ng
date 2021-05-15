@@ -1,12 +1,33 @@
 <mat-toolbar>
-  <div fxLayout="column" fxLayoutAlign="end stretch">
-    <span>INVENTORIC</span>
-    <span class="spacer"></span>
-    <span class="material-icons"> face </span>
-    <span class="material-icons"> article </span>
-    <span class="material-icons"> gavel </span>
-    <ul>
-      <li><button mat-button color="primary">About</button></li>
-    </ul>
-  </div>
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-evenly center">
+    <button mat-button>
+      <mat-icon>face</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>catching_pokemon</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>gavel</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>whatshot</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>home</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between none">
+    <div>
+      <h1>INVENTORIC</h1>
+    </div>
+    <span id="copyright"
+      >Copyrights Lorem Ipsum
+      <mat-icon>copyright</mat-icon>
+    </span>
+    <div>
+      <ul>
+        <li><button mat-button color="primary">About</button></li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
