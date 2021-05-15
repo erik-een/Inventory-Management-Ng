@@ -8,9 +8,11 @@ import { SharedModule } from './shared/shared.module';
 import { InventoriesModule } from './inventories/inventories.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OrdersModule } from './firebasetest/orders.module';
+import { OrdersService } from './firebasetest/orders-service/orders.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,8 +27,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     AppMaterialModule,
     FlexLayoutModule,
+    OrdersModule,
   ],
-  providers: [],
+  providers: [OrdersService],
   exports: [],
   bootstrap: [AppComponent],
 })
