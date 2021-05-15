@@ -1,3 +1,3 @@
-If an object's name is changed in a branch that you don't want to use anymore, do you have to pull the main development branch to revert/reset any gobal changes?
+If an object's name is changed in a branch that you don't want to use anymore, do you have to pull the main development branch to revert/reset any gobal changes? Or in other words how to reset everything in the project back to an older commit/branch?
 
 if I import material modules why don't the children of the module use the imported modules? (I wanted to use mattoolbar in my footer, imported my material module, but got an error saying mat-toolbar isn't a known element)
