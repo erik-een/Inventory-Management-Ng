@@ -8,11 +8,14 @@ import { SharedModule } from './shared/shared.module';
 import { InventoriesModule } from './inventories/inventories.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OrdersModule } from './firebasetest/orders.module';
 import { OrdersService } from './firebasetest/orders-service/orders.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +31,8 @@ import { OrdersService } from './firebasetest/orders-service/orders.service';
     AppMaterialModule,
     FlexLayoutModule,
     OrdersModule,
+    AngularFireModule.initializeApp(environment.FirebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [OrdersService],
   exports: [],
