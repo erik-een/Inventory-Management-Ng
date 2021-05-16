@@ -1,3 +1,8 @@
-If an object's name is changed in a branch that you don't want to use anymore, do you have to pull the main development branch to revert/reset any gobal changes? Or in other words how to reset everything in the project back to an older commit/branch?
+Problems I faced:
 
-if I import material modules why don't the children of the module use the imported modules? (I wanted to use mattoolbar in my footer, imported my material module, but got an error saying mat-toolbar isn't a known element)
+1. Didn't stick to plan - decided to go from bootstrap to material - a lot of time wasted learning the new library
+2. A lot of angular related tutorials are not using strict mode, takes a lot of time figuring out how to type declarations properly.
+3. Again, documentations don't usually contain strict typing!!!!!
+4. Branch, branch, branch. Commit, commit, commit.
+5. Branch for small features, don't go down rabbit hole!
+6. 
