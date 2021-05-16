@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../orders-service/orders.service';
 
-export interface ICoffeeOrder {
-  customerName: string;
-  orderNumber: number;
-  coffeeOrder: number;
-  completed: boolean;
-}
-
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -36,7 +29,14 @@ export class OrdersComponent implements OnInit {
     if (index > -1) this.coffeeOrder.splice(index, 1);
   };
 
-  onSubmit() {}
+  onSubmit() {
+    this.ordersService.form.value.coffeeOrder = this.coffeeOrder;
+    let data = this.ordersService.form.value;
+
+    this.ordersService.createCoffeeOrder(data).then((res) => {});
+    alert('Order successful');
+    this.ordersService.form.reset();
+  }
   constructor(public ordersService: OrdersService) {}
 
   ngOnInit(): void {}
