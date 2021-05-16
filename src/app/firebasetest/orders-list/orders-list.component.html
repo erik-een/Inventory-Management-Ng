@@ -1,0 +1,71 @@
+<!-- <table mat-table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of coffeeOrders">
+      <td>{{ order.payload.doc.data().orderNumber }}</td>
+      <td>{{ order.payload.doc.data().customerName }}</td>
+      <td>
+        <span *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+          {{ coffee }}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+-->
+<button mat-raised-button (click)="getCoffeeOrders()">Get Orders</button>
+<button mat-raised-button (click)="console()">Console</button>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
+</mat-form-field>
+
+<div>
+
+  <table mat-table [dataSource]="coffeeOrders" matSort>
+    <ng-container matColumnDef="customerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer Name</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.payload.doc.data().customerName }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="orderNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Number</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.payload.doc.data().orderNumber }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="coffeeOrder">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Coffees Ordered</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.payload.doc.data().coffeeOrder }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="completed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.payload.doc.data().completed }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
