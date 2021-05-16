@@ -12,7 +12,12 @@
     type="text"
     class="input-field col s12"
   />
-  <button mat-button *ngFor="let coffee of coffees" (click)="addCoffee(coffee)">
+  <button
+    mat-raised-button
+    color="primary"
+    *ngFor="let coffee of coffees"
+    (click)="addCoffee(coffee)"
+  >
     {{ coffee }}
   </button>
   <ul class="collection">
@@ -21,6 +26,8 @@
       <a class="col s1" (click)="removeCoffee(coffee)">x</a>
     </li>
   </ul>
-  <button #onsubmit (click)="onSubmit()">Submit</button>
+  <button mat-raised-button color="warn" #onsubmit (click)="onSubmit()">
+    Submit
+  </button>
 </form>
 <app-orders-list></app-orders-list>
