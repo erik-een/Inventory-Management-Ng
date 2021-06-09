@@ -5,3 +5,10 @@
 app-footer {
   margin-top: auto;
 }
+
+#inventoric-logo_link {
+  font-size: x-large;
+  &:hover {
+    text-decoration: underline 1px;
+  }
+}
